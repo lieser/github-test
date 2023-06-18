@@ -1,0 +1,64 @@
+{
+	"description": "A DKIM verifier add-on for Thunderbird",
+	"keywords": [
+		"thunderbird",
+		"mailextension",
+		"webextension",
+		"dkim"
+	],
+	"homepage": "https://github.com/lieser/dkim_verifier/wiki",
+	"bugs": {
+		"url": "https://github.com/lieser/dkim_verifier/issues"
+	},
+	"license": "MIT",
+	"author": "Philippe Lieser",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/lieser/dkim_verifier.git"
+	},
+	"scripts": {
+		"update-thirdparty": "node ./scripts/update-thirdparty.js",
+		"lint": "eslint .",
+		"lint:ci": "eslint --config .eslintrc-ci.json --max-warnings=0 .",
+		"checkJs": "tsc-silent --project jsconfig.json --suppress @/thirdparty/",
+		"test": "node node_modules/mocha/bin/mocha --recursive --reporter dot",
+		"test:ci": "node node_modules/mocha/bin/mocha --recursive --reporter mocha-multi --reporter-options spec=-,json=test-results.json",
+		"pack": "node ./scripts/pack.js"
+	},
+	"type": "module",
+	"dependencies": {
+		"tweetnacl-es6": "1.0.3"
+	},
+	"devDependencies": {
+		"@types/chai": "^4.3.5",
+		"@types/mocha": "^10.0.1",
+		"@types/node": "^20.3.1",
+		"@types/sinon": "^10.0.15",
+		"@types/thunderbird-webext-browser": "^109.0.0",
+		"chai": "^4.3.7",
+		"chalk": "^5.2.0",
+		"eslint": "^8.43.0",
+		"eslint-plugin-jsdoc": "^46.2.6",
+		"eslint-plugin-mocha": "^10.1.0",
+		"eslint-plugin-mozilla": "^3.1.0",
+		"globby": "^13.1.4",
+		"http-server": "^14.1.1",
+		"jszip": "^3.10.1",
+		"mocha": "^10.2.0",
+		"mocha-multi": "^1.1.7",
+		"simple-git": "^3.19.0",
+		"sinon": "^15.1.2",
+		"ts-essentials": "^9.3.2",
+		"tsc-silent": "^1.2.2",
+		"typescript": "^5.1.3",
+		"webextensions-api-fake": "^1.3.0"
+	},
+	"overrides": {
+		"webextensions-api-fake": {
+			"sinon": "^15.1.2"
+		}
+	},
+	"engines": {
+		"node": ">=16.15.0"
+	}
+}

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset='utf-8'>
+  <title data-i18n="treeviewSigners.user.title"></title>
+
+  <link rel='stylesheet' type='text/css' href="chrome://global/skin/in-content/common.css">
+  <link rel='stylesheet' type='text/css' href="chrome://messenger/skin/preferences/preferences.css">
+
+  <link rel='stylesheet' type='text/css' href="./table.css">
+  <link rel='stylesheet' type='text/css' href="./modalDialog.css">
+  <link rel='stylesheet' type='text/css' href="./signRulesUserView.css">
+
+  <script type="module" src="./translation.mjs.js"></script>
+  <script type="module" src="./signRulesUserView.mjs.js"></script>
+</head>
+
+<body>
+  <div class="body">
+    <table id="rulesTable">
+      <thead>
+        <tr>
+          <th data-name="domain" data-i18n="treeviewSigners.treecol.domain"></th>
+          <th data-name="listId" data-i18n="treeviewSigners.treecol.listId"></th>
+          <th data-name="addr" data-i18n="treeviewSigners.treecol.addr"></th>
+          <th data-name="sdid" data-i18n="treeviewSigners.treecol.sdid"></th>
+          <th data-name="type" data-type="number" data-i18n="treeviewSigners.treecol.ruletype"></th>
+          <th data-name="priority" data-type="number" data-i18n="treeviewSigners.treecol.priority"></th>
+          <th data-name="enabled" data-type="boolean" data-i18n="treeviewSigners.treecol.enabled"></th>
+        </tr>
+      </thead>
+      <tbody>
+      </tbody>
+    </table>
+  </div>
+  <div class="footer">
+    <button id="addSignersRule" data-i18n="treeviewSigners.addSignersRule"></button>
+    <button id="deleteSelectedRows" data-i18n="treeviewSigners.deleteSelectedRows"></button>
+    <button id="buttonHelp" data-i18n="button.help"></button>
+    <button id="exportRules" data-i18n="treeviewSigners.exportRules"></button>
+    <button id="importRules" data-i18n="treeviewSigners.importRules"></button>
+  </div>
+
+  <div id="importRulesDialog" class="modalOverlay">
+    <div class="dialogBox customDialogBox">
+      <header class="dialogTitleBar">
+        <label class="dialogTitle customDialogTitle" data-i18n="treeviewSigners.importRules"></label>
+      </header>
+      <div class="dialogFrame customDialogFrame">
+        <div>
+          <p data-i18n="importRules.replaceQuestion"></p>
+        </div>
+        <div class="dialogButtonBox">
+          <button id="importRulesDialogAdd" data-i18n="importRules.addRules"></button>
+          <button id="importRulesDialogReplace" data-i18n="importRules.replaceRules"></button>
+          <button id="importRulesDialogCancel" data-i18n="button.cancel"></button>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
