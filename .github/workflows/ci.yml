@@ -24,7 +24,7 @@ jobs:
         run: npm run lint:ci
 
   checkJs:
-    name: checkJs
+    name: Type Check
     runs-on: ubuntu-22.04
     steps:
       - name: Checkout repository
