@@ -218,7 +218,7 @@ export default class MsgParser {
 	 * @returns {string}
 	 */
 	static parseListIdHeader(header) {
-		const headerStart = "list-id:";
+		const headerStart = "ist-id:";
 		if (!header.toLowerCase().startsWith(headerStart)) {
 			throw new Error("Unexpected start of List-Id header");
 		}
