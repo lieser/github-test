@@ -28,7 +28,7 @@ export default class MsgParser {
 	 * @throws DKIM_InternalError
 	 */
 	static parseMsg(rawMsg) {
-		const newlineLength = 2;
+		let newlineLength = 2;
 
 		// convert all EOLs to CRLF
 		const msg = rawMsg.replace(/(\r\n|\n|\r)/g, "\r\n");
